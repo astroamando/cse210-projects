@@ -10,13 +10,13 @@ class Program
         int number = randomnum.Next(1, 100);
 
         bool game = false;
-
+        int count = 0;
         while (game == false)
         {
-            Console.WriteLine("What is your guess?");
+            Console.WriteLine("What is your guess? ");
             string userinput = Console.ReadLine();
             int guess = int.Parse(userinput);
-
+            count+=1;
             if (guess > number)
             {
                 Console.WriteLine("\nLower\n");
@@ -27,7 +27,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("You guessed the number!");
+                Console.WriteLine($"You guessed the number in {count} guesses!");
                 game = true;
             }
         }
